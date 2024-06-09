@@ -27,7 +27,7 @@ Course content:
 
 All the need parts are listed in [Tech Explorations parts and tools](https://techexplorations.com/parts/asbs-gs-parts-tools/).
 
-Theses are the parts I bought:
+<!-- Theses are the parts I bought:
 
 - [x] Arduino Starter Kit
 - Adafruit UV sensor GUVA-S12SD -> **Módulo Grove - Sensor UV (GUVA-S12SD) - Seeed** Só tem grove
@@ -47,4 +47,4 @@ Theses are the parts I bought:
 - Módulo Sensor de Detecção de Som
 - Sirene passiva para montagem em painel -> **Besouro activo 4..7VDC Ø12x9.5mm - TMB12A05**
 - Adafruit RGB LCD Shield Kit w/ 16x2
-- 2x16 characters LCD screen with I2C backpack adaptor
+- 2x16 characters LCD screen with I2C backpack adaptor -->

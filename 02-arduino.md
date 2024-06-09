@@ -160,6 +160,11 @@ With an LED use case we could have the following:
 
 The Arduino Uno R3 has 6 analog input pins, labeled A0 to A5. The analog input pins are used to read analog signals from sensors or other input devices. They can read voltages in the range of 0 to 5V. The analog-to-digital converter (ADC) converts the analog voltage into a 10-bit digital value, ranging from 0 to 1023, 0 corresponds to 0V and 1023 corresponds to 5V.
 
+|   V | Digital |
+| --: | ------- |
+|   0 | 0       |
+|   5 | 1023    |
+
 [Arduino Analog Input Pins](https://docs.arduino.cc/learn/microcontrollers/analog-input/)
 
 Use Cases:
