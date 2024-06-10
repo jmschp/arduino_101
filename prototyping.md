@@ -13,6 +13,7 @@
     - [Light-emitting diode (LED)](#light-emitting-diode-led)
     - [Button](#button)
     - [Potentiometer](#potentiometer)
+    - [Photoresistor](#photoresistor)
 
 ## Breadboards
 
@@ -204,3 +205,11 @@ In the following circuit we have a potentiometer controlling an LED. The potenti
 ![LED Potentiometer LED circuit](./images/potentiometer_led.png "LED Push-button circuit")
 
 [Tinkercad Potentiometer LED](https://www.tinkercad.com/things/1l70Uxi84LY-potentiometer-led)
+
+### Photoresistor
+
+> A photoresistor (also known as a light-dependent resistor, LDR, or photo-conductive cell) is a passive component that decreases in resistance as a result of increasing luminosity (light) on its sensitive surface, in other words, it exhibits photoconductivity.
+
+[Wikipedia Photoresistor](https://en.wikipedia.org/wiki/Photoresistor)
+
+<iframe width="450" height="280" src="https://www.tinkercad.com/embed/kn5F8VMbdI1?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
