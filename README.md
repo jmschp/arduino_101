@@ -1,6 +1,6 @@
 # Introduction
 
-This is a step by step guide to learn Arduino based on [Arduino Step by Step: Getting Started](https://www.udemy.com/course/arduino-sbs-17gs/) from [Tech Explorations](https://techexplorations.com/)
+This are my notes on learning Arduino. I started learning with [Arduino Step by Step: Getting Started](https://www.udemy.com/course/arduino-sbs-17gs/) from [Tech Explorations](https://techexplorations.com/).
 
 Course content:
 
@@ -45,6 +45,6 @@ All the need parts are listed in [Tech Explorations parts and tools](https://tec
 - Sensor ultrassónico (HC-SR04) -> **Sensor ultrassónico (HC-SR04) compatível com Arduino**
 - Sensor de som analog -> **Módulo de sensor de som com microfone compatível com Arduino - Velleman WPSE309**
 - Módulo Sensor de Detecção de Som
-- Sirene passiva para montagem em painel -> **Besouro activo 4..7VDC Ø12x9.5mm - TMB12A05**
+- Sirene passiva para montagem em painel -> **Besouro ativo 4..7VDC Ø12x9.5mm - TMB12A05**
 - Adafruit RGB LCD Shield Kit w/ 16x2
 - 2x16 characters LCD screen with I2C backpack adaptor -->
