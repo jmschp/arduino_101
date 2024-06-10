@@ -210,6 +210,10 @@ In the following circuit we have a potentiometer controlling an LED. The potenti
 
 > A photoresistor (also known as a light-dependent resistor, LDR, or photo-conductive cell) is a passive component that decreases in resistance as a result of increasing luminosity (light) on its sensitive surface, in other words, it exhibits photoconductivity.
 
+In other words the more light it receives the less resistance it has, so more current flows through it. They have two, not polarized terminals, just like a fixed resistor.
+
 [Wikipedia Photoresistor](https://en.wikipedia.org/wiki/Photoresistor)
 
-<iframe width="450" height="280" src="https://www.tinkercad.com/embed/kn5F8VMbdI1?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+![Photoresistor LED](./images/photoresistor_led.png "Photoresistor LED")
+
+[Tinkercad Photoresistor LED](https://www.tinkercad.com/things/kn5F8VMbdI1-photoresistor-led)
