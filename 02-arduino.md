@@ -12,6 +12,7 @@
       - [Analog Output (PWM) Pins](#analog-output-pwm-pins)
       - [Analog Input Pins](#analog-input-pins)
     - [Communication](#communication)
+  - [Arduino IDE code](#arduino-ide-code)
 
 Arduino is an open-source electronics platform based on easy-to-use hardware and software. It's intended for anyone making interactive projects. We can find several Arduino board manufactures, besides Arduino itself.
 
@@ -112,21 +113,28 @@ We can use a digital pin as output to contorl an external sensor, like for examp
 
 #### Digital Input Pin
 
-We can also use the digital pins to receive an input, **HIGH** or **LOW** from an external sensor like a button. In the following schematics we use a button to receive an input in Digital Pin 5. To avoid a Floating or Hanging value (when the state of the digital input is not specified), we added a Pull-up resistor, More on [Floating ground](https://en.wikipedia.org/wiki/Floating_ground) and [Pull-up and Pull-down resistors](https://techexplorations.com/blog/electronics/blog-what-are-pull-up-and-pull-down-resistors/).
+We can also use the digital pins to receive an input, **HIGH** or **LOW** from an external sensor like a button.
 
-- When the button is not pressed the LED is on, because current flows through the outer circuit with the resistor and Digital Pin 5 as a voltage, so we receive **HIGH** input.
-- When the button is pressed current flows through the inner circuit, because it has less resistance, and the LED is off, so we receive an **LOW** input.
+In the following schematics we use a push-button to receive an input in Digital Pin 5. To avoid a Floating or Hanging value (when the state of the digital input is not specified), we need to ad a Pull-up or Pull-down resistor.
 
-| Button    | D5   | LED |
-| --------- | ---- | --- |
-| Unpressed | HIGH | ON  |
-| Pressed   | LOW  | OFF |
+More on [Floating ground](https://en.wikipedia.org/wiki/Floating_ground) and [Pull-up and Pull-down resistors](https://techexplorations.com/blog/electronics/blog-what-are-pull-up-and-pull-down-resistors/).
+
+- **Pull-up resistor**:
+  - When the **button is not pressed** current flows from **5V Pin** to **Digital Pin 5** with the resistor, so **Digital Pin 5** as a **HIGH** value.
+  - When the **button is pressed**, **Digital Pin 5** as a **LOW** value, coming from **GND Pin**, current is not able to flow from **5V Pin** to **Digital Pin 5** due to higher resistance.
+
+| Button    | D5   |
+| --------- | ---- |
+| Unpressed | HIGH |
+| Pressed   | LOW  |
 
 ![Digital Input Button Pull-up resistor](./images/digital_input_button_pull_up_resistor.png)
 
 [Tinkercad Digital Input Button Pull-up resistor](https://www.tinkercad.com/things/4MaUEItR2Ej-digital-input-button-pull-up-resistor?sharecode=TK0xnTVVXEglhikOcDwrLlz27E5Ef8HxLA1ax_gbmfo)
 
-We can build a Pull-down resistors connecting it to ground.
+- **Pull-down resistor**:
+  - When the **button is not pressed**, **Digital Pin 5** as a clear **LOW** value from **GND Pin**.
+  - When the **button is pressed** current flows through it from **5V Pin**, and **Digital Pin 5** as a **HIGH** value. because it has less resistance.
 
 | Button    | D5   | LED |
 | --------- | ---- | --- |
@@ -183,3 +191,32 @@ The Arduino Uno R3 board implement 3 [communications protocols](https://en.wikip
 - [Universal Asynchronous Receiver-Transmitter (UART)](https://docs.arduino.cc/learn/communication/uart/) - [Wikipedia](https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter)
 - [Inter-Integrated Circuit (I2C) Protocol](https://docs.arduino.cc/learn/communication/wire/) - [Wikipedia](https://en.wikipedia.org/wiki/I%C2%B2C)
 - [Serial Peripheral Interface (SPI)](https://docs.arduino.cc/learn/communication/spi/) - [Wikipedia](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface) - [Duplex (telecommunications)](<https://en.wikipedia.org/wiki/Duplex_(telecommunications)>)
+
+## Arduino IDE code
+
+The Arduino language is based on **C++**, and it is designed to be user friendly to beginner users. We can use the [Arduino IDE](https://docs.arduino.cc/software/ide-v2/tutorials/getting-started-ide-v2/) to create [Arduino Sketches](https://docs.arduino.cc/learn/programming/sketches/), which are just a text file with some Arduino program that we can upload to the board, the extension used is `.ino`.
+
+```c++
+#define RED_LED_PIN 3
+#define GREEN_LED_PIN 5
+#define BLUE_LED_PIN 6
+
+void setup() {
+  pinMode(RED_LED_PIN, OUTPUT);
+  pinMode(GREEN_LED_PIN, OUTPUT);
+  pinMode(BLUE_LED_PIN, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(RED_LED_PIN, HIGH);
+  delay(1000);
+  digitalWrite(RED_LED_PIN, LOW);
+  digitalWrite(GREEN_LED_PIN, HIGH);
+  delay(1000);
+  digitalWrite(GREEN_LED_PIN, LOW);
+  digitalWrite(BLUE_LED_PIN, HIGH);
+  delay(1000);
+  digitalWrite(BLUE_LED_PIN, LOW);
+  delay(1000);
+}
+```
