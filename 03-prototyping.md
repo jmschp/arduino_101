@@ -16,7 +16,7 @@
 
 ## Breadboards
 
-Breadboards are used to prototyping a circuit. In the following breadboar we have 4 set of columns:
+Breadboards are used to prototyping a circuit. In the following breadboard we have 4 set of columns:
 
 - One set labeled **a b c d e**, within this set each row 1 to 30 is connected horizontally. So something we plug in a1 it will be connected to something connected in e1, but is is not connected to something in any of the other rows, unless we use a jumper wire to connect different rows.
 - Another set labeled **f g h i f** works in the same way, as the above.
@@ -33,7 +33,7 @@ The following GIF from Adafruit show how are the breadboards connected.
 
 ## Jumper wires
 
-We have several types of jumper wires, I list some of the most commons below, although thare are several others.
+We have several types of jumper wires, I list some of the most commons below, although there are several others.
 
 Jumper wires male to male
 
