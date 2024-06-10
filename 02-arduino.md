@@ -13,6 +13,9 @@
       - [Analog Input Pins](#analog-input-pins)
     - [Communication](#communication)
   - [Arduino IDE code](#arduino-ide-code)
+    - [Some sample Sketches](#some-sample-sketches)
+      - [Controlling an LED with a push-button (pull-down resistor)](#controlling-an-led-with-a-push-button-pull-down-resistor)
+      - [Using 3 potentiometer to control and RGB LED](#using-3-potentiometer-to-control-and-rgb-led)
 
 Arduino is an open-source electronics platform based on easy-to-use hardware and software. It's intended for anyone making interactive projects. We can find several Arduino board manufactures, besides Arduino itself.
 
@@ -100,7 +103,7 @@ The Arduino Uno R3 has 14 digital I/O (input/output) pins, numbered from 0 to 13
 
 #### Digital Output Pin
 
-We can use a digital pin as output to contorl an external sensor, like for example a LED. Suppose we have an LED connected to digital pin 7, and ground (GND). When we set D7 to **HIGH** this should turn one the LED, when we set it to **LOW** this should turn off the LED, so we have the possible outcomes:
+We can use a digital pin as output to control an external sensor, like for example a LED. Suppose we have an LED connected to digital pin 7, and ground (GND). When we set D7 to **HIGH** this should turn one the LED, when we set it to **LOW** this should turn off the LED, so we have the possible outcomes:
 
 | D7   | Voltage | LED |
 | ---- | ------- | --- |
@@ -194,29 +197,69 @@ The Arduino Uno R3 board implement 3 [communications protocols](https://en.wikip
 
 ## Arduino IDE code
 
-The Arduino language is based on **C++**, and it is designed to be user friendly to beginner users. We can use the [Arduino IDE](https://docs.arduino.cc/software/ide-v2/tutorials/getting-started-ide-v2/) to create [Arduino Sketches](https://docs.arduino.cc/learn/programming/sketches/), which are just a text file with some Arduino program that we can upload to the board, the extension used is `.ino`.
+The Arduino [language](https://docs.arduino.cc/language-reference/) is based on **C++**, and it is designed to be user friendly to beginner users. We can use the [Arduino IDE](https://docs.arduino.cc/learn/starting-guide/the-arduino-software-ide/) to create [Arduino Sketches](https://docs.arduino.cc/learn/programming/sketches/), which are just a texts files with some Arduino program that we can compile and upload to the board, using the Arduino IDE, the extension of the files is `.ino`.
+
+There are two main [components (functions)](<https://docs.arduino.cc/learn/programming/sketches#:~:text=setup()%20and%20loop()>) that are mandatory in every Arduino sketch, `setup()` and `loop()`:
+
+- `setup()`: It is called once, when the sketch starts. It is where we should setup pin modes and initialize libraries, or any other task that need to run once.
+- `loop()`: It is called over and over while the board is running. It is where we read data from sensor and output data to sensors.
+
+### Some sample Sketches
+
+#### Controlling an LED with a push-button (pull-down resistor)
+
+We set Digital Pin 7 as output for the LED, and Digital Pin 5 as input from the push-button.
 
 ```c++
-#define RED_LED_PIN 3
-#define GREEN_LED_PIN 5
-#define BLUE_LED_PIN 6
+const int ledOutputPin = 7;
+const int buttonInputPin = 5;
 
 void setup() {
-  pinMode(RED_LED_PIN, OUTPUT);
-  pinMode(GREEN_LED_PIN, OUTPUT);
-  pinMode(BLUE_LED_PIN, OUTPUT);
+  pinMode(buttonInputPin, INPUT);
+  pinMode(ledOutputPin, OUTPUT);
 }
 
 void loop() {
-  digitalWrite(RED_LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(RED_LED_PIN, LOW);
-  digitalWrite(GREEN_LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(GREEN_LED_PIN, LOW);
-  digitalWrite(BLUE_LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(BLUE_LED_PIN, LOW);
-  delay(1000);
+  digitalWrite(ledOutputPin, digitalRead(buttonInputPin));
 }
 ```
+
+[Tinkercad Digital Input Button Pull Down Resistor](https://www.tinkercad.com/things/doukbpoqPSL-digital-input-button-pull-down-resistor)
+
+#### Using 3 potentiometer to control and RGB LED
+
+In the global scope we first assign constants to each pin we need. Pins A0, A1 and A2 will be the analog inputs from the potentiometers wipers, then Digital Pins 3, 5, 6, will act as PWM pins for output to the RGB LED.
+
+In the `loop` we read what is the value of each potentiometer, with `analogRead`, then `map` the value, which is an integer from 0 to 1023, to the value supported by the PWM pins, which is between 0 and 255. Finally we output the read value to each color pin of the RGB LED with `analogWrite`.
+
+```c++
+const int redPotentiometerPin = A0;
+const int greenPotentiometerPin = A1;
+const int bluePotentiometerPin = A2;
+
+const int redLedPin = 3;
+const int greenLedPin = 5;
+const int blueLedPin = 6;
+
+void setup() {
+  pinMode(redLedPin, OUTPUT);
+  pinMode(greenLedPin, OUTPUT);
+  pinMode(blueLedPin, OUTPUT);
+}
+
+void loop() {
+  int redPotentiometerVal = analogRead(redPotentiometerPin);
+  int greenPotentiometerVal = analogRead(greenPotentiometerPin);
+  int bluePotentiometerVal = analogRead(bluePotentiometerPin);
+
+  long redLedVal = map(redPotentiometerVal, 0, 1023, 0, 255);
+  long greenLedVal = map(greenPotentiometerVal, 0, 1023, 0, 255);
+  long blueLedVal = map(bluePotentiometerVal, 0, 1023, 0, 255);
+
+  analogWrite(redLedPin, redLedVal);
+  analogWrite(greenLedPin, greenLedVal);
+  analogWrite(blueLedPin, blueLedVal);
+}
+```
+
+[Tinkercad Potentiometers RGB LED](https://www.tinkercad.com/things/blFnvm6MEm5-potentiometers-rgb-led)
