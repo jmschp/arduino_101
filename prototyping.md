@@ -9,11 +9,12 @@
     - [Using a Multimeter Measuring Resistance (Ω)](#using-a-multimeter-measuring-resistance-ω)
     - [Using a Multimeter Measuring Testing Continuity](#using-a-multimeter-measuring-testing-continuity)
   - [Soldering](#soldering)
-  - [Simple external sensors](#simple-external-sensors)
+  - [External sensors](#external-sensors)
     - [Light-emitting diode (LED)](#light-emitting-diode-led)
-    - [Button](#button)
+    - [Push-button](#push-button)
     - [Potentiometer](#potentiometer)
     - [Photoresistor](#photoresistor)
+    - [Ultra-Violet light sensor](#ultra-violet-light-sensor)
 
 ## Breadboards
 
@@ -170,7 +171,7 @@ Steps:
 - [Sciences at Smith College - The Basic Soldering Guide](https://www.science.smith.edu/~jcardell/Courses/EGR328/Readings/Soldering%20Guide.pdf)
 - [Adafruit Guide To Excellent Soldering](https://learn.adafruit.com/adafruit-guide-excellent-soldering)
 
-## Simple external sensors
+## External sensors
 
 ### Light-emitting diode (LED)
 
@@ -184,7 +185,7 @@ Single color LEDs have an anode and a cathode, while multiple color LEDs have on
 
 [Tinkercad LEDs and RGB LED](https://www.tinkercad.com/things/7xL8Mb6K1Eo-led-and-rgb-led)
 
-### Button
+### Push-button
 
 > A push-button (also spelled pushbutton) or simply button is a simple switch mechanism to control some aspect of a machine or a process. Buttons are typically made out of hard material, usually plastic or metal.
 
@@ -221,3 +222,11 @@ In other words the more light it receives the less resistance it has, so more cu
 ![Photoresistor LED](./images/photoresistor_led.png "Photoresistor LED")
 
 [Tinkercad Photoresistor LED](https://www.tinkercad.com/things/kn5F8VMbdI1-photoresistor-led)
+
+### Ultra-Violet light sensor
+
+A [Ultraviolet (UV)](https://en.wikipedia.org/wiki/Ultraviolet) light sensor is an analog sensor that can measure UV light. One important measure for this kind os sensor, is its [Responsivity](https://en.wikipedia.org/wiki/Responsivity)relative to the wavelength that the sensor can detect. For this purpose I am using the Grove - UV Sensor from [Seed Studio](https://wiki.seeedstudio.com/Grove-UV_Sensor/), which has a response wavelength between 240 nm to 370 nm.
+
+![Grove - UV Sensor](https://files.seeedstudio.com/wiki/Grove-UV_Sensor/img/UV_Sensor_01.jpg "Grove - UV Sensor")
+
+![UV sensor responsivity graph](https://files.seeedstudio.com/wiki/Grove-UV_Sensor/img/The%20theory%20of%20UV%20sensor.png "UV sensor responsivity graph")

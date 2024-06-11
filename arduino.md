@@ -193,9 +193,17 @@ Use Cases:
 
 The Arduino Uno R3 board implement 3 [communications protocols](https://en.wikipedia.org/wiki/Communication_protocol) that allow it to communicate with more sophisticated sensor like GPS, a 3-axis accelerometer, or even other Arduino boards or a computer.
 
-- [Universal Asynchronous Receiver-Transmitter (UART)](https://docs.arduino.cc/learn/communication/uart/) - [Wikipedia](https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter)
-- [Inter-Integrated Circuit (I2C) Protocol](https://docs.arduino.cc/learn/communication/wire/) - [Wikipedia](https://en.wikipedia.org/wiki/I%C2%B2C)
-- [Serial Peripheral Interface (SPI)](https://docs.arduino.cc/learn/communication/spi/) - [Wikipedia](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface) - [Duplex (telecommunications)](<https://en.wikipedia.org/wiki/Duplex_(telecommunications)>)
+- Universal Asynchronous Receiver-Transmitter
+  - [Arduino docs](https://docs.arduino.cc/learn/communication/uart/)
+  - [Wikipedia](https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter)
+- Inter-Integrated Circuit (I2C) Protocol
+  - [Arduino docs](https://docs.arduino.cc/learn/communication/wire/)
+  - [Wikipedia](https://en.wikipedia.org/wiki/I%C2%B2C)
+  - [Adafruit I2C addresses!](https://learn.adafruit.com/i2c-addresses/overview)
+- Serial Peripheral Interface (SPI)
+  - [Arduino docs](https://docs.arduino.cc/learn/communication/spi/)
+  - [Wikipedia](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface)
+  - [Duplex (telecommunications)](<https://en.wikipedia.org/wiki/Duplex_(telecommunications)>)
 
 ## Arduino IDE code
 
