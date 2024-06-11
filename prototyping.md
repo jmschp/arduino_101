@@ -157,6 +157,7 @@ Steps:
 
 ![Multimeter](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/2017_Cyfrowy_miernik_uniwersalny.jpg/1600px-2017_Cyfrowy_miernik_uniwersalny.jpg?20180731085219 "Multimeter")
 
+- [Arduino Multimeter Basics](https://docs.arduino.cc/learn/electronics/multimeter-basics/)
 - [Wikipedia Multimeter](https://en.wikipedia.org/wiki/Multimeter)
 - [Electric current](https://en.wikipedia.org/wiki/Electric_current)
 - [Ammeter](https://en.wikipedia.org/wiki/Ammeter)
@@ -164,7 +165,8 @@ Steps:
 
 ## Soldering
 
-- [Wikipedia Solder](https://en.wikipedia.org/wiki/Solder)
+- [The Arduino Guide to Soldering](https://docs.arduino.cc/learn/electronics/soldering-basics/)
+  [Wikipedia Solder](https://en.wikipedia.org/wiki/Solder)
 - [Sciences at Smith College - The Basic Soldering Guide](https://www.science.smith.edu/~jcardell/Courses/EGR328/Readings/Soldering%20Guide.pdf)
 - [Adafruit Guide To Excellent Soldering](https://learn.adafruit.com/adafruit-guide-excellent-soldering)
 
@@ -199,6 +201,8 @@ In the following circuit a push-button controls an LED. If we push the button th
 > A potentiometer is a three-terminal resistor with a sliding or rotating contact that forms an adjustable voltage divider.
 
 [Wikipedia Potentiometer](https://en.wikipedia.org/wiki/Potentiometer)
+
+[Basics of Potentiometers with Arduino](https://docs.arduino.cc/learn/electronics/potentiometer-basics/)
 
 In the following circuit we have a potentiometer controlling an LED. The potentiometer is has 3 pins, the middle pin is the wiper and the and the 2 outside pins one is positive and the other negative. LED and the potentiometer share the same ground, and the anode of the LED is connected to the middle pin (wiper pin) of the potentiometer. If the potentiometer is fully turned anti clockwise the LED is receiving 0V, so is off. The more we turn the potentiometer clockwise more power the LED receives.
 
