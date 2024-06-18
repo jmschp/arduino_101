@@ -17,6 +17,7 @@
       - [Controlling an LED with a push-button (pull-down resistor)](#controlling-an-led-with-a-push-button-pull-down-resistor)
       - [Using 3 potentiometer to control and RGB LED](#using-3-potentiometer-to-control-and-rgb-led)
       - [Using a photoresistor to control an LED](#using-a-photoresistor-to-control-an-led)
+    - [Using a Ultraviolet light sensor](#using-a-ultraviolet-light-sensor)
 
 Arduino is an open-source electronics platform based on easy-to-use hardware and software. It's intended for anyone making interactive projects. We can find several Arduino board manufactures, besides Arduino itself.
 
@@ -296,5 +297,40 @@ void loop() {
   sensorValue = constrain(sensorValue, 0, 255);
 
   analogWrite(ledOutputPin, sensorValue);
+}
+```
+
+### Using a Ultraviolet light sensor
+
+Using a Ultraviolet light sensor to calculate the [UV index](https://www.epa.gov/sunsafety/uv-index-scale-0). This code is for [Grove - UV Sensor GUVA-S12D from Seed Studio](https://wiki.seeedstudio.com/Grove-UV_Sensor/). According to the [schematics](https://files.seeedstudio.com/wiki/Grove-UV_Sensor/res/Grove%20-%20UV%20Sensor%20v1.1sch.pdf) the formula to calculate UV Index is `((Vout * R2) / ((R1 + R2) * R3 * (10^-9)) - 83) / 21`.
+
+In `setup` we initialize the Serial monitor with a baud rate of 9600, to print the UV Index. In a `for` loop we read the analog value from pin A0 1024 times then we get the mean value and assign it to `meanVal`. For the UV Index formula we need the sensor Vout, since the Arduino works at 5V and the analog value can range between 0 and 1023, we can convert the analog value to volts, multiplying the value by approximately 0,00489 (5 / 1023). We apply the formula and get the UV Index.
+
+```c++
+// UV Index formula ((Vout * R2) / ((R1 + R2) * R3 * (10^-9)) - 83) / 21
+// R1 = 3300
+// R2 = 1000
+// R3 = 1000000
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int sensorValue;
+  long sum = 0;
+
+  for (int i = 0; i < 1024; i++) {
+    sensorValue = analogRead(A0);
+    sum = sensorValue + sum;
+    delay(2);
+  }
+
+  long meanVal = sum / 1024;
+  float sensorVout = meanVal * (5.0 / 1023.0);
+
+  Serial.print("The current UV index is:");
+  Serial.println((sensorVout * 1000 / 4.3 - 83) / 21);
+  delay(20);
 }
 ```

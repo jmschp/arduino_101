@@ -225,8 +225,12 @@ In other words the more light it receives the less resistance it has, so more cu
 
 ### Ultra-Violet light sensor
 
-A [Ultraviolet (UV)](https://en.wikipedia.org/wiki/Ultraviolet) light sensor is an analog sensor that can measure UV light. One important measure for this kind os sensor, is its [Responsivity](https://en.wikipedia.org/wiki/Responsivity)relative to the wavelength that the sensor can detect. For this purpose I am using the Grove - UV Sensor from [Seed Studio](https://wiki.seeedstudio.com/Grove-UV_Sensor/), which has a response wavelength between 240 nm to 370 nm.
+A [Ultraviolet (UV)](https://en.wikipedia.org/wiki/Ultraviolet) light sensor is an sensor that can measure UV light. For this purpose I am using the [Grove - UV Sensor GUVA-S12D from Seed Studio](https://wiki.seeedstudio.com/Grove-UV_Sensor/). One important measure for this kind os sensor, is its [Responsivity](https://en.wikipedia.org/wiki/Responsivity) relative to the wavelength that the sensor can detect. This sensor has a response wavelength between 240 nm to 370 nm. We can use the sensor output to calculate the [UV index](https://www.epa.gov/sunsafety/uv-index-scale-0). The formula to get to the UV index from the sensor output voltage depends on the sensor characteristics, for this senor we can read in the [schematics](https://files.seeedstudio.com/wiki/Grove-UV_Sensor/res/Grove%20-%20UV%20Sensor%20v1.1sch.pdf) that `UV Index = ((Vout * R2) / ((R1 + R2) * R3 * (10^-9)) - 83) / 21`.
 
 ![Grove - UV Sensor](https://files.seeedstudio.com/wiki/Grove-UV_Sensor/img/UV_Sensor_01.jpg "Grove - UV Sensor")
 
 ![UV sensor responsivity graph](https://files.seeedstudio.com/wiki/Grove-UV_Sensor/img/The%20theory%20of%20UV%20sensor.png "UV sensor responsivity graph")
+
+Usually a UV analog sensor, as only 3 terminals ground, power (5V), and an analog output pin. In the case of the sensor I am using with a Grove connections it has a fourth pin Normally Closed contact (NC) which is not used.
+
+![UV Light sensor schematics](https://github.com/futureshocked/ArduinoSbSGettingStarted/blob/master/Schematics/0410%20-%20UV%20Light%20Sensor/0410%20-%20UV%20Light%20Sensor.png?raw=true "UV Light sensor schematics")
