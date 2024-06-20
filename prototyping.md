@@ -10,11 +10,16 @@
     - [Using a Multimeter Measuring Testing Continuity](#using-a-multimeter-measuring-testing-continuity)
   - [Soldering](#soldering)
   - [External sensors](#external-sensors)
-    - [Light-emitting diode (LED)](#light-emitting-diode-led)
-    - [Push-button](#push-button)
-    - [Potentiometer](#potentiometer)
-    - [Photoresistor](#photoresistor)
-    - [Ultra-Violet light sensor](#ultra-violet-light-sensor)
+    - [Simple sensors](#simple-sensors)
+      - [Light-emitting diode (LED)](#light-emitting-diode-led)
+      - [Push-button](#push-button)
+      - [Potentiometer](#potentiometer)
+    - [Light and color sensors](#light-and-color-sensors)
+      - [Photoresistor](#photoresistor)
+      - [Ultra-Violet light sensor](#ultra-violet-light-sensor)
+      - [Light, RGB, and Gesture Sensor](#light-rgb-and-gesture-sensor)
+    - [Temperature, humidity and pressure sensors](#temperature-humidity-and-pressure-sensors)
+      - [Measuring temperature and humidity with the DHT22](#measuring-temperature-and-humidity-with-the-dht22)
 
 ## Breadboards
 
@@ -173,7 +178,9 @@ Steps:
 
 ## External sensors
 
-### Light-emitting diode (LED)
+### Simple sensors
+
+#### Light-emitting diode (LED)
 
 > A light-emitting diode (LED) is a semiconductor device that emits light when current flows through it. Electrons in the semiconductor recombine with electron holes, releasing energy in the form of photons. The color of the light (corresponding to the energy of the photons) is determined by the energy required for electrons to cross the band gap of the semiconductor.
 
@@ -185,7 +192,7 @@ Single color LEDs have an anode and a cathode, while multiple color LEDs have on
 
 [Tinkercad LEDs and RGB LED](https://www.tinkercad.com/things/7xL8Mb6K1Eo-led-and-rgb-led)
 
-### Push-button
+#### Push-button
 
 > A push-button (also spelled pushbutton) or simply button is a simple switch mechanism to control some aspect of a machine or a process. Buttons are typically made out of hard material, usually plastic or metal.
 
@@ -197,7 +204,7 @@ In the following circuit a push-button controls an LED. If we push the button th
 
 [Tinkercad Push-button LED](https://www.tinkercad.com/things/a3ouPZUmi7G-push-button-led)
 
-### Potentiometer
+#### Potentiometer
 
 > A potentiometer is a three-terminal resistor with a sliding or rotating contact that forms an adjustable voltage divider.
 
@@ -211,7 +218,9 @@ In the following circuit we have a potentiometer controlling an LED. The potenti
 
 [Tinkercad Potentiometer LED](https://www.tinkercad.com/things/1l70Uxi84LY-potentiometer-led)
 
-### Photoresistor
+### Light and color sensors
+
+#### Photoresistor
 
 > A photoresistor (also known as a light-dependent resistor, LDR, or photo-conductive cell) is a passive component that decreases in resistance as a result of increasing luminosity (light) on its sensitive surface, in other words, it exhibits photoconductivity.
 
@@ -223,7 +232,7 @@ In other words the more light it receives the less resistance it has, so more cu
 
 [Tinkercad Photoresistor LED](https://www.tinkercad.com/things/kn5F8VMbdI1-photoresistor-led)
 
-### Ultra-Violet light sensor
+#### Ultra-Violet light sensor
 
 A [Ultraviolet (UV)](https://en.wikipedia.org/wiki/Ultraviolet) light sensor is an sensor that can measure UV light. For this purpose I am using the [Grove - UV Sensor GUVA-S12D from Seed Studio](https://wiki.seeedstudio.com/Grove-UV_Sensor/). One important measure for this kind os sensor, is its [Responsivity](https://en.wikipedia.org/wiki/Responsivity) relative to the wavelength that the sensor can detect. This sensor has a response wavelength between 240 nm to 370 nm. We can use the sensor output to calculate the [UV index](https://www.epa.gov/sunsafety/uv-index-scale-0). The formula to get to the UV index from the sensor output voltage depends on the sensor characteristics, for this senor we can read in the [schematics](https://files.seeedstudio.com/wiki/Grove-UV_Sensor/res/Grove%20-%20UV%20Sensor%20v1.1sch.pdf) that `UV Index = ((Vout * R2) / ((R1 + R2) * R3 * (10^-9)) - 83) / 21`.
 
@@ -234,3 +243,21 @@ A [Ultraviolet (UV)](https://en.wikipedia.org/wiki/Ultraviolet) light sensor is 
 Usually a UV analog sensor, as only 3 terminals ground, power (5V), and an analog output pin. In the case of the sensor I am using with a Grove connections it has a fourth pin Normally Closed contact (NC) which is not used.
 
 ![UV Light sensor schematics](https://github.com/futureshocked/ArduinoSbSGettingStarted/blob/master/Schematics/0410%20-%20UV%20Light%20Sensor/0410%20-%20UV%20Light%20Sensor.png?raw=true "UV Light sensor schematics")
+
+#### Light, RGB, and Gesture Sensor
+
+With a Sensor like [Adafruit APDS9960 Proximity, Light, RGB, and Gesture Sensor - STEMMA QT / Qwiic](https://www.adafruit.com/product/3595), we can measure basic gesture, RGB color, proximity, or ambient light.
+
+NEED SENSOR TO TEST
+
+### Temperature, humidity and pressure sensors
+
+#### Measuring temperature and humidity with the DHT22
+
+The DHT22 is a digital sensor capable of measuring temperature, within -40º to 80º Celsius and humidity from (0% to 100% RH, it may take up to 5 seconds to take a measurement. The sensor can be power with a 3.3-6V DC power supply. [Full Datasheet](https://www.sparkfun.com/datasheets/Sensors/Temperature/DHT22.pdf).
+
+The sensor comes with either 3 or 4 pins. The ones that have 4 pins means that one of the pins is not connected, usually pin 3. We can connect it to an Arduino, using its 3 pins, one for GND anther for power, and the data pin connected to one of Arduino's digital inputs:
+
+![DHT22 Temperature sensor schematics](https://github.com/futureshocked/ArduinoSbSGettingStarted/blob/master/Schematics/0430%20-%20DHT22/0430%20-%20DHT22.png?raw=true)
+
+Notice the 10kOhm "strong" pull-up resistor. This is implemented this way to avoid a a floating condition in the Arduino digital input, when the sensor is not transmitting any data.
