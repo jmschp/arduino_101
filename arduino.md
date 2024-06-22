@@ -19,6 +19,7 @@
       - [Using a photoresistor to control an LED](#using-a-photoresistor-to-control-an-led)
     - [Using a Ultraviolet light sensor](#using-a-ultraviolet-light-sensor)
     - [Using the DHT22 temperature and humidity sensor](#using-the-dht22-temperature-and-humidity-sensor)
+    - [Using the Thermistor to measure temperature](#using-the-thermistor-to-measure-temperature)
 
 Arduino is an open-source electronics platform based on easy-to-use hardware and software. It's intended for anyone making interactive projects. We can find several Arduino board manufactures, besides Arduino itself.
 
@@ -391,5 +392,50 @@ void loop() {
   Serial.print(F("°C "));
   Serial.print(hif);
   Serial.println(F("°F"));
+}
+```
+
+### Using the Thermistor to measure temperature
+
+In this code I use the [suoapvs/NTC_Thermistor](https://github.com/suoapvs/NTC_Thermistor) to get the thermistor temperature.
+
+```c++
+#include <Thermistor.h>
+#include <NTC_Thermistor.h>
+
+#define SENSOR_PIN A0
+#define REFERENCE_RESISTANCE 9830
+#define NOMINAL_RESISTANCE 10000
+#define NOMINAL_TEMPERATURE 25
+#define B_VALUE 4050
+
+Thermistor* thermistor;
+
+void setup() {
+  Serial.begin(9600);
+
+  thermistor = new NTC_Thermistor(
+    SENSOR_PIN,
+    REFERENCE_RESISTANCE,
+    NOMINAL_RESISTANCE,
+    NOMINAL_TEMPERATURE,
+    B_VALUE);
+}
+
+
+void loop() {
+  const double celsius = thermistor->readCelsius();
+  const double kelvin = thermistor->readKelvin();
+  const double fahrenheit = thermistor->readFahrenheit();
+
+  Serial.print("Temperature: ");
+  Serial.print(celsius);
+  Serial.print(" C, ");
+  Serial.print(kelvin);
+  Serial.print(" K, ");
+  Serial.print(fahrenheit);
+  Serial.println(" F");
+
+  delay(2000);
 }
 ```
