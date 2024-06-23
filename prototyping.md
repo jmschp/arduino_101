@@ -22,6 +22,7 @@
       - [Measuring temperature and humidity with the DHT22](#measuring-temperature-and-humidity-with-the-dht22)
       - [Thermistor](#thermistor)
       - [Measuring temperature with the TMP36](#measuring-temperature-with-the-tmp36)
+      - [Measuring temperature with the MCP9808](#measuring-temperature-with-the-mcp9808)
 
 ## Breadboards
 
@@ -301,13 +302,21 @@ $$
 
 We can connect the sensor to the Arduino in 2 ways:
 
-- Directly to the 5V Arduino power supply. This power supply main contain noise depending on what power supply we are using to power the Arduino.
-- To the 3.3V power supply. If our power supply to the Arduino contains noise, we can improve sensor reading and stability using the Arduino 3.3V supply. Or any other external clean power supply.
+- Directly to the 5V Arduino power supply. This power supply may contain noise depending on what power supply we are using to power the Arduino.
+- To the built-in 3.3V power supply. This supply goes through a voltage regulator, and is a cleaner signal. If our power supply to the Arduino contains noise, we can improve sensor reading and stability using the Arduino built-in 3.3V supply. Or any other external clean power supply.
 
 This setup can be used with any other sensor.
 
 ![TMP36 connected to Arduino 5V schematics](https://github.com/futureshocked/ArduinoSbSGettingStarted/blob/master/Schematics/0450%20-%20TMP36%20Temperature%20sensor/0450%20-%20TMP36%20Temperature%20sensor%205V.png?raw=true)
 
-When using the 3.3V Arduino power supply we also need to connect the power supply to the [AREF (Analog Reference) pin](https://support.arduino.cc/hc/en-us/articles/360018922239-About-the-AREF-pin).
+When using the 3.3V Arduino power supply we also need to connect the power supply to the [AREF (Analog Reference) pin](https://support.arduino.cc/hc/en-us/articles/360018922239-About-the-AREF-pin), to notify is that the max supply we are getting now is 3.3V.
 
 ![TMP36 connected to Arduino 3.3V schematics](https://github.com/futureshocked/ArduinoSbSGettingStarted/blob/master/Schematics/0450%20-%20TMP36%20Temperature%20sensor/0450%20-%20TMP36%20Temperature%20sensor%203V3.png?raw=true)
+
+#### Measuring temperature with the MCP9808
+
+The [MCP9808](https://www.microchip.com/en-us/product/mcp9808) is an high accuracy temperature sensor (±0.5°C). It communicates through the I2C protocol. [Microchip MCP9808 Datasheet](https://ww1.microchip.com/downloads/aemDocuments/documents/OTH/ProductDocuments/DataSheets/MCP9808-0.5C-Maximum-Accuracy-Digital-Temperature-Sensor-Data-Sheet-DS20005095B.pdf). The sensor is available in different packages:
+
+- [Adafruit MCP9808 High Accuracy I2C Temperature Sensor Breakout - STEMMA QT / Qwiic](https://www.adafruit.com/product/5027)
+- [MCP9808 High Accuracy I2C Temperature Sensor Breakout Board](https://www.adafruit.com/product/1782)
+- [Grove - I2C High Accuracy Temperature Sensor(MCP9808)](https://wiki.seeedstudio.com/Grove-I2C_High_Accuracy_Temperature_Sensor-MCP9808/)
