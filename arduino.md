@@ -20,6 +20,7 @@
     - [Using a Ultraviolet light sensor](#using-a-ultraviolet-light-sensor)
     - [Using the DHT22 temperature and humidity sensor](#using-the-dht22-temperature-and-humidity-sensor)
     - [Using the Thermistor to measure temperature](#using-the-thermistor-to-measure-temperature)
+    - [Using the TMP36 to measure temperature](#using-the-tmp36-to-measure-temperature)
 
 Arduino is an open-source electronics platform based on easy-to-use hardware and software. It's intended for anyone making interactive projects. We can find several Arduino board manufactures, besides Arduino itself.
 
@@ -435,6 +436,37 @@ void loop() {
   Serial.print(" K, ");
   Serial.print(fahrenheit);
   Serial.println(" F");
+
+  delay(2000);
+}
+```
+
+### Using the TMP36 to measure temperature
+
+We initial set the power supply in millivolts. When using a different power supply, from the standard built-in 5V, we need to configure the reference voltage used for analog input with [analogReference()](https://docs.arduino.cc/language-reference/en/functions/analog-io/analogReference/).
+
+In the `loop` we get a reading and convert it to millivolts, then we convert the milivolts to temperature in celsius.
+
+```c++
+const int supplyMilliVolts = 3300; // Use 5000 for 5V standard power supply, or 3300 for 3.3V Arduino built-in power supply/
+
+void setup() {
+  analogReference(EXTERNAL); // Comment out if using the standard built-in 5V standard power supply.
+  Serial.begin(9600);
+}
+
+void loop() {
+  int reading = analogRead(A0);
+  Serial.print(reading);
+  Serial.println(" analog reading");
+
+  float milliVolts = reading * (supplyMilliVolts / 1024.0);
+  Serial.print(milliVolts);
+  Serial.println(" mV");
+
+  float temperatureC = (milliVolts - 500) / 10.0;
+  Serial.print(temperatureC);
+  Serial.println(" ºC");
 
   delay(2000);
 }

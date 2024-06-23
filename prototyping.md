@@ -21,6 +21,7 @@
     - [Temperature, humidity and pressure sensors](#temperature-humidity-and-pressure-sensors)
       - [Measuring temperature and humidity with the DHT22](#measuring-temperature-and-humidity-with-the-dht22)
       - [Thermistor](#thermistor)
+      - [Measuring temperature with the TMP36](#measuring-temperature-with-the-tmp36)
 
 ## Breadboards
 
@@ -287,3 +288,26 @@ As with the thermistor, we will need to assemble a voltage divider circuit to us
 ![Thermistor Voltage Divider schematics](https://github.com/futureshocked/ArduinoSbSGettingStarted/blob/master/Schematics/0440%20-%20Thermistor/0440%20-%20Thermistor%205V.png?raw=true)
 
 To get the temperature of the thermistor we can use the [Steinhart–Hart equation](https://en.wikipedia.org/wiki/Steinhart%E2%80%93Hart_equation). There are Arduino libraries that implement the equation, for example [panStamp/thermistor](https://github.com/panStamp/thermistor) and [suoapvs/NTC_Thermistor](https://github.com/suoapvs/NTC_Thermistor). The coefficients needed to calculate the temperature can be found in the thermistor Datasheet. The one I am using is [NTC 10KR 500mW Ø6.5mm](https://storage.googleapis.com/mauser-public-images/prod_description_document/2023/3/33f465c10d296f2fff37f6107f732a39_ntcc-10k.pdf).
+
+#### Measuring temperature with the TMP36
+
+The TMP36 is an analog sensor, and it is available in different packages, as we can see in the [datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/TMP35_36_37.pdf), the one that I am using is the [TO-92](https://en.wikipedia.org/wiki/TO-92), which comes with 3 pins (PIN 1, +VS; PIN 2, VOUT; PIN 3, GND).
+
+The sensor relation between output voltage (Vout) and temperature is linear, at 10 mV/°C scale factor, as we can see in [Figure 6. Output Voltage vs. Temperature of the datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/TMP35_36_37.pdf). On **Table 4. TMP35/TMP36/TMP37 Output Characteristics**, we also notice a 0.5V (500 mV) offset from the TMP36. So we can calculate the the temperature using the following formula:
+
+$$
+Temp = \frac{Vout - 500}{10}
+$$
+
+We can connect the sensor to the Arduino in 2 ways:
+
+- Directly to the 5V Arduino power supply. This power supply main contain noise depending on what power supply we are using to power the Arduino.
+- To the 3.3V power supply. If our power supply to the Arduino contains noise, we can improve sensor reading and stability using the Arduino 3.3V supply. Or any other external clean power supply.
+
+This setup can be used with any other sensor.
+
+![TMP36 connected to Arduino 5V schematics](https://github.com/futureshocked/ArduinoSbSGettingStarted/blob/master/Schematics/0450%20-%20TMP36%20Temperature%20sensor/0450%20-%20TMP36%20Temperature%20sensor%205V.png?raw=true)
+
+When using the 3.3V Arduino power supply we also need to connect the power supply to the [AREF (Analog Reference) pin](https://support.arduino.cc/hc/en-us/articles/360018922239-About-the-AREF-pin).
+
+![TMP36 connected to Arduino 3.3V schematics](https://github.com/futureshocked/ArduinoSbSGettingStarted/blob/master/Schematics/0450%20-%20TMP36%20Temperature%20sensor/0450%20-%20TMP36%20Temperature%20sensor%203V3.png?raw=true)
