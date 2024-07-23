@@ -37,9 +37,9 @@ All the need parts are listed in [Tech Explorations parts and tools](https://tec
 - Resistores variados (principalmente resistores de 220Ω, 1κΩ e 10κΩ) -> **Conjunto de 525 resistências 1/4W 1% de filme metálico (0 - 1MOhm)**
 - Sensor de temperatura e umidade DHT22
 - TMP36 Analog Temperature sensor
-- MCP9808 High Accuracy I2C Temperature Sensor Breakout Board -> **Módulo Grove - Sensor de Temperatura de Alta Precisão I2C (MCP9808) - Seeed**
+- MCP9808 High Accuracy I²C Temperature Sensor Breakout Board -> **Módulo Grove - Sensor de Temperatura de Alta Precisão I²C (MCP9808) - Seeed**
 - 20x NTC Resistores Termistores
-- Adafruit BMP280 I2C or SPI Barometric Pressure & Altitude Sensor -> **Módulo Grove - Barómetro - Sensor de pressão atmosférica (BMP280) - Seeed**
+- Adafruit BMP280 I²C or SPI Barometric Pressure & Altitude Sensor -> **Módulo Grove - Barómetro - Sensor de pressão atmosférica (BMP280) - Seeed**
 - Adafruit ADXL335 - 5V ready triple-axis accelerometer -> **Módulo Grove - Acelerômetro Analógico de 3 Eixos [± 3g] (ADXL-335) - Seeed**
 - Adafruit PIR (motion) sensor -> **Sensor de movimento PIR (HC-SR501) compatível com Arduino**
 - Sensor ultrassónico (HC-SR04) -> **Sensor ultrassónico (HC-SR04) compatível com Arduino**
@@ -47,4 +47,4 @@ All the need parts are listed in [Tech Explorations parts and tools](https://tec
 - Módulo Sensor de Detecção de Som
 - Sirene passiva para montagem em painel -> **Besouro ativo 4..7VDC Ø12x9.5mm - TMB12A05**
 - Adafruit RGB LCD Shield Kit w/ 16x2
-- 2x16 characters LCD screen with I2C backpack adaptor -->
+- 2x16 characters LCD screen with I²C backpack adaptor -->

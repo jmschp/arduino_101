@@ -60,10 +60,10 @@ The [Arduino Uno R3](https://docs.arduino.cc/hardware/uno-rev3/) is the simplest
     - **Function:** Indicate serial communication activity. TX blinks when data is being sent, and RX blinks when data is being received.
 12. **Resettable Fuse:** A small fuse that protects the USB port.
     - **Function:** Automatically breaks the connection if too much current is drawn, protecting your computer’s USB port.
-13. **SPI, I2C, and UART Communication Pins:** Dedicated pins for different communication protocols.
+13. **SPI, I²C, and UART Communication Pins:** Dedicated pins for different communication protocols.
     - **Function:**
       - **SPI (Serial Peripheral Interface):** Pins 10 (SS), 11 (MOSI), 12 (MISO), 13 (SCK).
-      - **I2C (Inter-Integrated Circuit):** Pins A4 (SDA) and A5 (SCL).
+      - **I²C (Inter-Integrated Circuit):** Pins A4 (SDA) and A5 (SCL).
       - **UART (Universal Asynchronous Receiver/Transmitter):** Pins 0 (RX) and 1 (TX).
 
 ### Microcontroller vs. Microprocessor
@@ -200,10 +200,10 @@ The Arduino Uno R3 board implement 3 [communications protocols](https://en.wikip
 - Universal Asynchronous Receiver-Transmitter
   - [Arduino docs](https://docs.arduino.cc/learn/communication/uart/)
   - [Wikipedia](https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter)
-- Inter-Integrated Circuit (I2C) Protocol
+- Inter-Integrated Circuit (I²C) Protocol
   - [Arduino docs](https://docs.arduino.cc/learn/communication/wire/)
   - [Wikipedia](https://en.wikipedia.org/wiki/I%C2%B2C)
-  - [Adafruit I2C addresses!](https://learn.adafruit.com/i2c-addresses/overview)
+  - [Adafruit I²C addresses!](https://learn.adafruit.com/i2c-addresses/overview)
 - Serial Peripheral Interface (SPI)
   - [Arduino docs](https://docs.arduino.cc/learn/communication/spi/)
   - [Wikipedia](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface)
