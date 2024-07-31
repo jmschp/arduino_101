@@ -25,9 +25,9 @@
       - [Measuring temperature with the MCP9808](#measuring-temperature-with-the-mcp9808)
       - [Measuring atmospheric pressure with BMP180](#measuring-atmospheric-pressure-with-bmp180)
     - [Detecting acceleration](#detecting-acceleration)
-      - [Using the ADXL335 to measure acceleration](#using-the-adxl335-to-measure-acceleration)
+      - [Measure acceleration with ADXL335](#measure-acceleration-with-adxl335)
     - [Sensing Sound](#sensing-sound)
-      - [Using the analog Grove - Sound Sensor to detect sound intensity](#using-the-analog-grove---sound-sensor-to-detect-sound-intensity)
+      - [Measuring sound intensity with analog Grove - Sound Sensor](#measuring-sound-intensity-with-analog-grove---sound-sensor)
 
 ## Breadboards
 
@@ -343,13 +343,15 @@ NEED SENSOR TO TEST
 
 ### Detecting acceleration
 
-#### Using the ADXL335 to measure acceleration
+#### Measure acceleration with ADXL335
 
 Th ADXL335 is an 3-axis accelerometer analog sensor. It measures acceleration with a minimum full-scale range of ±3 g.
 
 ### Sensing Sound
 
-#### Using the analog Grove - Sound Sensor to detect sound intensity
+#### Measuring sound intensity with analog Grove - Sound Sensor
+
+The [Grove - Sound Sensor](https://wiki.seeedstudio.com/Grove-Sound_Sensor/) is an analog sensor. The more noise it detects the higher value we will read in the Arduino alago input.
 
 > Grove - Sound Sensor can detect the sound intensity of the environment. The main component of the module is a simple microphone, which is based on the L358 amplifier and an electret microphone. This module's output is analog and can be easily sampled and tested by a Seeeduino.
 
