@@ -1,6 +1,6 @@
-# Prototyping
+# Basic electronics
 
-- [Prototyping](#prototyping)
+- [Basic electronics](#basic-electronics)
   - [Breadboards](#breadboards)
   - [Jumper wires](#jumper-wires)
   - [Multimeter](#multimeter)
