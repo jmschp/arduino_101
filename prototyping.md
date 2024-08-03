@@ -27,7 +27,8 @@
     - [Detecting acceleration](#detecting-acceleration)
       - [Measure acceleration with ADXL335](#measure-acceleration-with-adxl335)
     - [Sensing Sound](#sensing-sound)
-      - [Measuring sound intensity with analog Grove - Sound Sensor](#measuring-sound-intensity-with-analog-grove---sound-sensor)
+      - [Measuring sound with analog Grove - Sound Sensor](#measuring-sound-with-analog-grove---sound-sensor)
+      - [Measuring sound with Whadda WPSE309](#measuring-sound-with-whadda-wpse309)
 
 ## Breadboards
 
@@ -349,10 +350,19 @@ Th ADXL335 is an 3-axis accelerometer analog sensor. It measures acceleration wi
 
 ### Sensing Sound
 
-#### Measuring sound intensity with analog Grove - Sound Sensor
+#### Measuring sound with analog Grove - Sound Sensor
 
-The [Grove - Sound Sensor](https://wiki.seeedstudio.com/Grove-Sound_Sensor/) is an analog sensor. The more noise it detects the higher value we will read in the Arduino alago input.
+The [Grove - Sound Sensor](https://wiki.seeedstudio.com/Grove-Sound_Sensor/) is an analog sensor. The more noise it detects the higher value we will read in the Arduino analog input.
 
 > Grove - Sound Sensor can detect the sound intensity of the environment. The main component of the module is a simple microphone, which is based on the L358 amplifier and an electret microphone. This module's output is analog and can be easily sampled and tested by a Seeeduino.
 
 [Grove - Sound Sensor](https://wiki.seeedstudio.com/Grove-Sound_Sensor/)
+
+#### Measuring sound with Whadda WPSE309
+
+> This high sensitivity sound detection module detects sounds between 48 and 66 dB and has an analog as well as a digital output.
+> The AO or analog output creates a real-time output voltage signal of the microphone, whereas the DO or digital output depends on the sound intensity and the threshold that has been set.
+
+[Whadda microphone sound sensor WPSE309](https://whadda.com/product/microphone-sound-sensor-module-wpse309/)
+
+![](https://github.com/futureshocked/ArduinoSbSGettingStarted/blob/master/Schematics/0560%20-%20Analog%20and%20digital%20microphone/0560%20-%20Digital%20sound%20sensor.png?raw=true)

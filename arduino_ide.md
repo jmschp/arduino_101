@@ -10,6 +10,7 @@
     - [Using the Thermistor to measure temperature](#using-the-thermistor-to-measure-temperature)
     - [Using the TMP36 to measure temperature](#using-the-tmp36-to-measure-temperature)
     - [Using Grove - Sound Sensor to mesure sound intensity](#using-grove---sound-sensor-to-mesure-sound-intensity)
+    - [Using Whadda WPSE309 sound sensor to mesure sound intensity](#using-whadda-wpse309-sound-sensor-to-mesure-sound-intensity)
 
 The Arduino [language](https://docs.arduino.cc/language-reference/) is based on **C++**, and it is designed to be user friendly to beginner users. We can use the [Arduino IDE](https://docs.arduino.cc/learn/starting-guide/the-arduino-software-ide/) to create [Arduino Sketches](https://docs.arduino.cc/learn/programming/sketches/), which are just a texts files with some Arduino program that we can compile and upload to the board, using the Arduino IDE, the extension of the files is `.ino`.
 
@@ -312,3 +313,29 @@ void loop() {
 We will see both variable in the Serial Plotter producing a graph as the sample image below.
 
 ![Serial Plotter reading sound sensor and potentiometer](./images/serial_plotter_sound_potentiometer.png "Serial Plotter reading sound sensor and potentiometer")
+
+### Using Whadda WPSE309 sound sensor to mesure sound intensity
+
+```c++
+const int soundDigitalInPin = 7;
+const int letOutPin = 8;
+const int soundAnalogIn = A0;
+
+void setup() {
+  pinMode(soundDigitalInPin, INPUT);
+  pinMode(letOutPin, OUTPUT);
+  Serial.begin(115200);
+}
+
+void loop() {
+  int soundDigitalInVal = digitalRead(soundDigitalInPin);
+  int soundAnalogVal = analogRead(soundAnalogIn);
+  digitalWrite(letOutPin, soundDigitalInVal);
+
+  Serial.print("soundDigitalInVal:");
+  Serial.print(soundDigitalInVal);
+  Serial.print(",");
+  Serial.print("soundAnalogVal:");
+  Serial.println(soundAnalogVal);
+}
+```
