@@ -11,6 +11,7 @@
     - [Using the TMP36 to measure temperature](#using-the-tmp36-to-measure-temperature)
     - [Using Grove - Sound Sensor to mesure sound intensity](#using-grove---sound-sensor-to-mesure-sound-intensity)
     - [Using Whadda WPSE309 sound sensor to mesure sound intensity](#using-whadda-wpse309-sound-sensor-to-mesure-sound-intensity)
+    - [Using a HC-SR501 PIR sensor to interact with an LED](#using-a-hc-sr501-pir-sensor-to-interact-with-an-led)
 
 The Arduino [language](https://docs.arduino.cc/language-reference/) is based on **C++**, and it is designed to be user friendly to beginner users. We can use the [Arduino IDE](https://docs.arduino.cc/learn/starting-guide/the-arduino-software-ide/) to create [Arduino Sketches](https://docs.arduino.cc/learn/programming/sketches/), which are just a texts files with some Arduino program that we can compile and upload to the board, using the Arduino IDE, the extension of the files is `.ino`.
 
@@ -337,5 +338,35 @@ void loop() {
   Serial.print(",");
   Serial.print("soundAnalogVal:");
   Serial.println(soundAnalogVal);
+}
+```
+
+### Using a HC-SR501 PIR sensor to interact with an LED
+
+In the following sketch we use the output form the PIR sensor as input for a LED. In the setup we set the desired pin modes, and we wait for 1 minute for the sensor to initialize (it is the recommended time for the HC-SR501 sensor). Then in the loop, we just read the PIR sensor value and pass it to the LED.
+
+```c++
+const int pirInputPin = 7;
+const int ledOutputPin = 8;
+
+void setup() {
+  pinMode(7, INPUT);
+  pinMode(8, OUTPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
+  Serial.begin(115200);
+  while (!Serial) {
+    ;  // wait for serial port to connect. Needed for native USB
+  }
+  Serial.println("Initializing sensor. Wait 1 minute");
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(60000);
+  digitalWrite(LED_BUILTIN, LOW);
+  Serial.println("Sensor initialized.");
+}
+
+void loop() {
+  int pirValue = digitalRead(pirInputPin);
+  Serial.println(pirValue);
+  digitalWrite(ledOutputPin, pirValue);
 }
 ```
