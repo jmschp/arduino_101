@@ -22,6 +22,8 @@
     - [Measuring sound with Whadda WPSE309](#measuring-sound-with-whadda-wpse309)
   - [Detecting objects with Passive Infrared sensor (PIR)](#detecting-objects-with-passive-infrared-sensor-pir)
     - [Detecting objects with HC-SR501 PIR](#detecting-objects-with-hc-sr501-pir)
+  - [Sensing distance](#sensing-distance)
+    - [Sensing distance with the Ultrasonic Ranging Module HC-SR04](#sensing-distance-with-the-ultrasonic-ranging-module-hc-sr04)
 
 ## Simple sensors
 
@@ -236,3 +238,24 @@ Or we can use it with the Arduino, reading the sensor output in an Arduino's dig
 ![PIR and LED with Arduino schematics](https://github.com/futureshocked/ArduinoSbSGettingStarted/blob/master/Schematics/0500%20-%20Infrared%20motion%20sensor/0500%20-%20Infrared%20sensor%20with%20Arduino.png?raw=true "PIR and LED with Arduino schematics")
 
 [Tinkercad PIR and LED with Arduino](https://www.tinkercad.com/things/cVIg5B548y1-passive-infrared-sensor-led).
+
+## Sensing distance
+
+### Sensing distance with the Ultrasonic Ranging Module HC-SR04
+
+We can use a [Ultrasound](https://en.wikipedia.org/wiki/Ultrasound) to measure a distance of an object. For this experiment I am using the [HC-SR04](https://docs.google.com/document/d/1Y-yZnNhMYy7rwhAgyL_pfa39RsB-x2qR4vP8saG73rE/edit). The HC-SR04 has 2 [Ultrasonic transducers](https://en.wikipedia.org/wiki/Ultrasonic_transducer), one transmitter and one receiver.
+
+Specification:
+
+- Detecting range: 3 cm - 400 cm
+- Resolution 1 cm
+- Best in 30 degree angle
+- 5VDC power supply
+- Global Current Consumption 15 mA
+- Dual transducer
+- Ultrasonic Frequency 40k Hz
+- Trigger Pulse Width 10 μs
+
+The HC-SR04 as 4 pins 2 for power (Vcc and GND), and another 2 for Trigger an Echo. A device such as the Arduino using this sensor will issue a ping through the Trigger, effectively emitting a Ultrasound, and when the sensor receives the Echo of the Ultrasound will set to HIGH the Echo pin. The distance of the object can be calculated based on the time between sending and receiving.
+
+![HC-SR04 sens0r Arduino schematics](https://github.com/futureshocked/ArduinoSbSGettingStarted/blob/master/Schematics/0510%20-%20Ultrasonic%20distance%20sensor/0510%20-%20Ultrasonic%20Sensor%20HC-SR04.png?raw=true) "HC-SR04 sens0r Arduino schematics"

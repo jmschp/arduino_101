@@ -12,6 +12,7 @@
     - [Using Grove - Sound Sensor to mesure sound intensity](#using-grove---sound-sensor-to-mesure-sound-intensity)
     - [Using Whadda WPSE309 sound sensor to mesure sound intensity](#using-whadda-wpse309-sound-sensor-to-mesure-sound-intensity)
     - [Using a HC-SR501 PIR sensor to interact with an LED](#using-a-hc-sr501-pir-sensor-to-interact-with-an-led)
+    - [Using a HC-SR04 to sense distance of objects](#using-a-hc-sr04-to-sense-distance-of-objects)
 
 The Arduino [language](https://docs.arduino.cc/language-reference/) is based on **C++**, and it is designed to be user friendly to beginner users. We can use the [Arduino IDE](https://docs.arduino.cc/learn/starting-guide/the-arduino-software-ide/) to create [Arduino Sketches](https://docs.arduino.cc/learn/programming/sketches/), which are just a texts files with some Arduino program that we can compile and upload to the board, using the Arduino IDE, the extension of the files is `.ino`.
 
@@ -368,5 +369,62 @@ void loop() {
   int pirValue = digitalRead(pirInputPin);
   Serial.println(pirValue);
   digitalWrite(ledOutputPin, pirValue);
+}
+```
+
+### Using a HC-SR04 to sense distance of objects
+
+In the following sketch we use the HC-SR04 to measure the distance of an object. And we rely in the [speed of Sound](https://en.wikipedia.org/wiki/Speed_of_sound) to achieve our distance calculation, the time it takes the ultrasound to reach the object and return. The Speed of Sound at room temperature (20°C) is about 343 m/s.
+
+$$
+343 m/s \Leftrightarrow 34300 cm/s \Leftrightarrow 0.0343 cm/μs \\
+\text{we can convert that to a fraction}\\
+\frac{343}{10000}cm/μs \Leftrightarrow \frac{1}{29,15451895}cm/μs
+$$
+
+We can calculate the distance dividing the duration of the signal by 2 (because we only care about the the returning duration, and not the total round trip), and then dividing again by 29,15451895.
+
+$$
+distance = \frac{\frac{duration}{2}}{29,15451895} cm
+$$
+
+The sketch works as follows:
+
+1. In the setup we initialize Digital Pin 2 as Trigger and Digital Pin 4 as Echo.
+2. In the loop we start by setting Trigger to LOW for just 2 microseconds
+3. Then we set the Trigger HIGH and back to LOW for 10 microseconds
+4. With the `pulseIn` we measure the time that the Echo Pin went form LOW to HIGH and back to LOW
+5. This will give us the duration, the time it took since sending the signal and receiving it.
+6. Finally apply the above formula
+
+```c++
+#define trigPin 2
+#define echoPin 4
+
+void setup() {
+  Serial.begin (9600);
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+}
+
+void loop() {
+  long duration, distance;
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  duration = pulseIn(echoPin, HIGH);
+  distance = (duration / 2) / 29.155;
+
+  //
+  if (distance >= 400 || distance <= 0){
+    Serial.println("Out of range");
+  }
+  else {
+    Serial.print(distance);
+    Serial.println(" cm");
+  }
+  delay(500);
 }
 ```
