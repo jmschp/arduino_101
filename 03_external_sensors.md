@@ -24,6 +24,8 @@
     - [Detecting objects with HC-SR501 PIR](#detecting-objects-with-hc-sr501-pir)
   - [Sensing distance](#sensing-distance)
     - [Sensing distance with the Ultrasonic Ranging Module HC-SR04](#sensing-distance-with-the-ultrasonic-ranging-module-hc-sr04)
+  - [Making noise](#making-noise)
+    - [Making noise with a Piezo capsule PKM22EPP-40](#making-noise-with-a-piezo-capsule-pkm22epp-40)
 
 ## Simple sensors
 
@@ -259,3 +261,9 @@ Specification:
 The HC-SR04 as 4 pins 2 for power (Vcc and GND), and another 2 for Trigger an Echo. A device such as the Arduino using this sensor will issue a ping through the Trigger, effectively emitting a Ultrasound, and when the sensor receives the Echo of the Ultrasound will set to HIGH the Echo pin. The distance of the object can be calculated based on the time between sending and receiving.
 
 ![HC-SR04 sens0r Arduino schematics](https://github.com/futureshocked/ArduinoSbSGettingStarted/blob/master/Schematics/0510%20-%20Ultrasonic%20distance%20sensor/0510%20-%20Ultrasonic%20Sensor%20HC-SR04.png?raw=true) "HC-SR04 sens0r Arduino schematics"
+
+## Making noise
+
+### Making noise with a Piezo capsule PKM22EPP-40
+
+The [Piezo capsule](https://en.wikipedia.org/wiki/Piezoelectric_speaker) PKM22EPP-40 is a kind of passive buzzer with 2 pins, that we can use to emit sound of different frequencies.
