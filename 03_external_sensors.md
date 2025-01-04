@@ -26,6 +26,8 @@
     - [Sensing distance with the Ultrasonic Ranging Module HC-SR04](#sensing-distance-with-the-ultrasonic-ranging-module-hc-sr04)
   - [Making noise](#making-noise)
     - [Making noise with a Piezo capsule PKM22EPP-40](#making-noise-with-a-piezo-capsule-pkm22epp-40)
+  - [Display information in a Display](#display-information-in-a-display)
+    - [Using a alphanumeric Liquid-crystal display (LCD) (16x2 characters)](#using-a-alphanumeric-liquid-crystal-display-lcd-16x2-characters)
 
 ## Simple sensors
 
@@ -267,3 +269,13 @@ The HC-SR04 as 4 pins 2 for power (Vcc and GND), and another 2 for Trigger an Ec
 ### Making noise with a Piezo capsule PKM22EPP-40
 
 The [Piezo capsule](https://en.wikipedia.org/wiki/Piezoelectric_speaker) PKM22EPP-40 is a kind of passive buzzer with 2 pins, that we can use to emit sound of different frequencies.
+
+## Display information in a Display
+
+### Using a alphanumeric Liquid-crystal display (LCD) (16x2 characters)
+
+> A liquid-crystal display (LCD) is a flat-panel display or other electronically modulated optical device that uses the light-modulating properties of liquid crystals combined with polarizers to display information.
+
+[Wikipedia Liquid-crystal display](https://en.wikipedia.org/wiki/Liquid-crystal_display)
+
+[Arduino docs - Liquid Crystal Displays (LCD) with Arduino](https://docs.arduino.cc/learn/electronics/lcd-displays/)
