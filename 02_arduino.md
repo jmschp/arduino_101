@@ -12,6 +12,7 @@
       - [Analog Output (PWM) Pins](#analog-output-pwm-pins)
       - [Analog Input Pins](#analog-input-pins)
     - [Communication](#communication)
+  - [Arduino IDE code](#arduino-ide-code)
 
 Arduino is an open-source electronics platform based on easy-to-use hardware and software. It's intended for anyone making interactive projects. We can find several Arduino board manufactures, besides Arduino itself.
 
@@ -199,3 +200,12 @@ The Arduino Uno R3 board implement 3 [communications protocols](https://en.wikip
   - [Arduino docs](https://docs.arduino.cc/learn/communication/spi/)
   - [Wikipedia](https://en.wikipedia.org/wiki/Serial_Peripheral_Interface)
   - [Duplex (telecommunications)](<https://en.wikipedia.org/wiki/Duplex_(telecommunications)>)
+
+## Arduino IDE code
+
+The Arduino [language](https://docs.arduino.cc/language-reference/) is based on **C++**, and it is designed to be user friendly to beginner users. We can use the [Arduino IDE](https://docs.arduino.cc/learn/starting-guide/the-arduino-software-ide/) to create [Arduino Sketches](https://docs.arduino.cc/learn/programming/sketches/), which are just a texts files with some Arduino program that we can compile and upload to the board, using the Arduino IDE, the extension of the files is `.ino`.
+
+There are two main [components (functions)](<https://docs.arduino.cc/learn/programming/sketches#:~:text=setup()%20and%20loop()>) that are mandatory in every Arduino sketch, `setup()` and `loop()`:
+
+- `setup()`: It is called once, when the sketch starts. It is where we should setup pin modes and initialize libraries, or any other task that need to run once.
+- `loop()`: It is called over and over while the board is running. It is where we read data from sensor and output data to sensors.
