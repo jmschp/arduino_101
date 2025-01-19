@@ -1,6 +1,9 @@
 # Basic electronics
 
 - [Basic electronics](#basic-electronics)
+  - [Electricity principles](#electricity-principles)
+    - [Electricity flow](#electricity-flow)
+    - [What is Voltage?](#what-is-voltage)
   - [Breadboards](#breadboards)
   - [Jumper wires](#jumper-wires)
   - [Multimeter](#multimeter)
@@ -9,6 +12,34 @@
     - [Using a Multimeter Measuring Resistance (Ω)](#using-a-multimeter-measuring-resistance-ω)
     - [Using a Multimeter Measuring Testing Continuity](#using-a-multimeter-measuring-testing-continuity)
   - [Soldering](#soldering)
+
+## Electricity principles
+
+### Electricity flow
+
+The conventional direction of current, first defined by [Benjamin Franklin](https://en.wikipedia.org/wiki/Benjamin_Franklin), that became known as conventional current, is from positive to negative. The positively charged particle are free to move and the negatively charged particles are fixed, so positive moves towards negative.
+
+Later [J. J. Thomson](https://en.wikipedia.org/wiki/J._J._Thomson) discovered the [electron](https://en.wikipedia.org/wiki/Electron) which is negatively charged, and consequently that the flow of electricity is from negative to positive.
+
+> The conventional direction of current, also known as conventional current, is arbitrarily defined as the direction in which positive charges flow. In a conductive material, the moving charged particles that constitute the electric current are called charge carriers. In metals, which make up the wires and other conductors in most electrical circuits, the positively charged atomic nuclei of the atoms are held in a fixed position, and the negatively charged electrons are the charge carriers, free to move about in the metal. In other materials, notably the semiconductors, the charge carriers can be positive or negative, depending on the dopant used. Positive and negative charge carriers may even be present at the same time, as happens in an electrolyte in an electrochemical cell.
+>
+> A flow of positive charges gives the same electric current, and has the same effect in a circuit, as an equal flow of negative charges in the opposite direction. Since current can be the flow of either positive or negative charges, or both, a convention is needed for the direction of current that is independent of the type of charge carriers. Negatively charged carriers, such as the electrons (the charge carriers in metal wires and many other electronic circuit components), therefore flow in the opposite direction of conventional current flow in an electrical circuit.
+>
+> **Reference direction**
+>
+> A current in a wire or circuit element can flow in either of two directions. When defining a variable _I_ to represent the current, the direction representing positive current must be specified, usually by an arrow on the circuit schematic diagram. This is called the reference direction of the current _I_. When analyzing electrical circuits, the actual direction of current through a specific circuit element is usually unknown until the analysis is completed. Consequently, the reference directions of currents are often assigned arbitrarily. When the circuit is solved, a negative value for the current implies the actual direction of current through that circuit element is opposite that of the chosen reference direction.
+
+[Wikipedia - Electric current](https://en.wikipedia.org/wiki/Electric_current#Conventions)
+
+![Flow of electricity](https://upload.wikimedia.org/wikipedia/commons/2/2e/Current_notation.svg "The electrons, the charge carriers in an electrical circuit, flow in the opposite direction of the conventional electric current.")
+
+### What is Voltage?
+
+> Voltage, also known as **(electrical) potential difference, electric pressure**, or **electric tension** is the difference in electric potential between two points. In a static electric field, it corresponds to the work needed per unit of charge to move a positive test charge from the first point to the second point. In the International System of Units (SI), the derived unit for voltage is the volt (V).
+
+[Wikipedia - Voltage](https://en.wikipedia.org/wiki/Voltage)
+
+Voltage can be seen as the force needed to move a charged particle (electron) inside a wire. Volts is the unit used to describe the strength of this force. When applying Voltage to a circuit it causes the electrons to move along the wires and the flow of electrons in a wire is [Electric Current](https://en.wikipedia.org/wiki/Electric_current).
 
 ## Breadboards
 
