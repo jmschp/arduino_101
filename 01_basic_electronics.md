@@ -5,7 +5,6 @@
     - [Electricity flow](#electricity-flow)
     - [What is Voltage?](#what-is-voltage)
   - [Breadboards](#breadboards)
-  - [Jumper wires](#jumper-wires)
   - [Multimeter](#multimeter)
     - [Using a Multimeter Measuring Voltage (V)](#using-a-multimeter-measuring-voltage-v)
     - [Using a Multimeter Measuring Current (A)](#using-a-multimeter-measuring-current-a)
@@ -57,26 +56,6 @@ The following GIF from Adafruit show how are the breadboards connected.
 
 - [Adafruit Breadboards](https://learn.adafruit.com/breadboards-for-beginners/breadboards)
 - [Wikipedia Breadboard](https://en.wikipedia.org/wiki/Breadboard)
-
-## Jumper wires
-
-We have several types of jumper wires, I list some of the most commons below, although there are several others.
-
-Jumper wires male to male
-
-![Jumper wires male to male](./images/jumper_wires_mate_male.jpg "Jumper wires male to male")
-
-Jumper wires male to female
-
-![Jumper wires male to female](./images/jumper_wires_mate_female.jpg "Jumper wires male to female")
-
-Jumper wires female to female
-
-![Jumper wires female to female](./images/jumper_wires_femate_female.jpeg "Jumper wires female to female")
-
-Jumper wires crocodile clip
-
-![Jumper wires crocodile clip](./images/jumper_wires_crocodile_clip.jpg "Jumper wires crocodile clip")
 
 ## Multimeter
 
