@@ -1,6 +1,6 @@
-# Basic electronics
+# Basic electronics Tools
 
-- [Basic electronics](#basic-electronics)
+- [Basic electronics Tools](#basic-electronics-tools)
   - [Breadboards](#breadboards)
   - [Multimeter](#multimeter)
     - [Using a Multimeter Measuring Voltage (V)](#using-a-multimeter-measuring-voltage-v)
